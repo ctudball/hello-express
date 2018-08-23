@@ -1,0 +1,8 @@
+language: node_js
+
+jobs:
+  include:
+    stage: test
+    script: ./auto/test
+    stage: deploy
+    script: ./auto/deploy
