@@ -27,6 +27,7 @@ server.get('/metadata', (req, res) => {
 
 // Start Server
 server.listen(port);
+console.log(`Service starting on port ${port}`);
 
 // Export for testing
 module.exports = server;
