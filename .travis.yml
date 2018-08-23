@@ -2,7 +2,13 @@ language: node_js
 
 jobs:
   include:
-    stage: test
-    script: ./auto/test
-    stage: deploy
-    script: ./auto/deploy
+    - stage: "Tests"
+      name: "Run Mocha tests"
+      env:
+        - NODE_ENV=development
+      script: ./auto/test
+    - stage: "deploy"
+      name: "Deploy to Production"
+      env:
+        - NODE_ENV=production
+      script: ./auto/deploy
