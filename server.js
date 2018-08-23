@@ -1,4 +1,5 @@
 const express = require('express');
+const servicedata = require('./src/service')
 
 // Setup
 const server = express();
@@ -11,13 +12,14 @@ server.get('/', (request, response) =>{
 });
 
 // Create heath endpoint
+let health = servicedata.health();
 server.get('/health', (req, res) => {
     res.contentType('text/plain');
-    res.send("OK");
+    res.send(health);
 });
 
 // Create metadata endpoint
-let metadata = '';
+let metadata = servicedata.metadata();
 server.get('/metadata', (req, res) => {
     res.contentType('application/json');
     res.send(metadata);
