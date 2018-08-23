@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-npm test
+echo "Deployment goes here."
