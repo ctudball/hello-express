@@ -3,11 +3,13 @@ sudo: required
 services:
   - docker
 
+env:
+  - DOCKER_USER=ctudball
 jobs:
   include:
     - stage: "Tests"
       name: "Run Mocha tests"
       install:
-        - docker build -t ctudball/hello-express .
+        - docker build -t $DOCKER_USER/hello-express .
       script:
-        - docker run ctudball/hello-express test
+        - docker run $DOCKER_USER/hello-express test
