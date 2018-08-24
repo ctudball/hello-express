@@ -7,9 +7,7 @@ jobs:
   include:
     - stage: "Tests"
       name: "Run Mocha tests"
-      env:
-        - USER=ctudball
       install:
-        - docker build -t ctudball/hello-express
+        - docker build -t ctudball/hello-express .
       script:
         - docker run ctudball/hello-express test
