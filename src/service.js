@@ -1,9 +1,7 @@
 
 // Generate service metadata
 metadata = () => {
-    let lastcommitsha = require('child_process')
-    .execSync('git rev-parse HEAD')
-    .toString().trim();
+    let lastcommitsha = process.env.TRAVIS_COMMIT? process.env.TRAVIS_COMMIT : "Unknown";
     return JSON.parse(`
         {"${process.env.npm_package_name}": {
             "version": "${process.env.npm_package_version}",
