@@ -10,8 +10,3 @@ jobs:
       env:
         - NODE_ENV=development
       script: ./auto/test
-    - stage: "deploy"
-      name: "Deploy to Production"
-      env:
-        - NODE_ENV=production
-      script: ./auto/deploy
