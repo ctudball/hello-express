@@ -6,6 +6,7 @@ RUN npm install
 
 COPY server.js .
 COPY src/* ./src/
+COPY test/* ./test/
 
 EXPOSE 3000
 
