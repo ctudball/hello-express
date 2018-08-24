@@ -8,7 +8,7 @@ const port = 3000;
 
 // Create main endpoint
 server.get('/', (request, response) =>{
-    response.send('<h1>Hello from Express</h1>')
+    response.send('<h1>Hullo from Express</h1>')
 });
 
 // Create heath endpoint
