@@ -10,6 +10,6 @@ jobs:
       env:
         - USER=ctudball
       install:
-        - docker build -t $USER/hello-express
+        - docker build -t ctudball/hello-express
       script:
-        - docker run $USER/hello-express test
+        - docker run ctudball/hello-express test
