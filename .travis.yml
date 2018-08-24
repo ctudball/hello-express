@@ -1,12 +1,15 @@
-language: node_js
+sudo: required
 
-node_js:
-  - "node"
+services:
+  - docker
 
 jobs:
   include:
     - stage: "Tests"
       name: "Run Mocha tests"
       env:
-        - NODE_ENV=development
-      script: ./auto/test
+        - USER=ctudball
+      install:
+        - docker build -t $USER/hello-express
+      script:
+        - docker run $USER/hello-express test
