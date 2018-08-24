@@ -46,7 +46,7 @@ describe('Metadata Endoint', () => {
     })
 })
 // Test: Main endpoint returns valid HTML
-describe('HealthPoint', () => {
+describe('MainRoute', () => {
     it('Should return a status code of 200', (done) => {
         let result = requester.get('/').end((err, res) => {
             expect(err).to.be.null;
@@ -54,7 +54,7 @@ describe('HealthPoint', () => {
             done();
         });
     })
-    it('Should return OK as text/plain', (done) => {
+    it('Should return vaild HTML', (done) => {
         let result = requester.get('/').end((err, res) => {
             expect(err).to.be.null;
             expect(res).to.be.html;
